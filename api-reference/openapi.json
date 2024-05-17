@@ -19,9 +19,9 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/instances": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "Retorna todas as Instancias de uma equipe",
         "parameters": [
           {
             "name": "limit",
