@@ -83,7 +83,7 @@
                     "updatedAt": {
                         "description": "Data de alteração de dados",
                         "type": "string"
-                    },
+                    }
                 }
             },
             "NewPlant": {
