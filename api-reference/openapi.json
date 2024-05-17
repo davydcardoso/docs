@@ -1,115 +1,133 @@
 {
-  "openapi": "3.0.1",
-  "info": {
-    "title": "RocketSend",
-    "description": "",
-    "license": {
-      "name": "MIT"
+    "openapi": "3.0.1",
+    "info": {
+        "title": "RocketSend",
+        "description": "",
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0.0"
     },
-    "version": "1.0.0"
-  },
-  "servers": [
-    {
-      "url": "http://api.rocketsend.click"
-    }
-  ],
-  "security": [
-    {
-      "bearerAuth": []
-    }
-  ],
-  "paths": {
-    "/instances": {
-      "get": {
-        "description": "Retorna todas as Instancias de uma equipe",
-        "responses": {
-          "200": {
-            "description": "Instances response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Plant"
-                  }
+    "servers": [
+        {
+            "url": "http://api.rocketsend.click"
+        }
+    ],
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "paths": {
+        "/instances": {
+            "get": {
+                "description": "Retorna todas as Instancias de uma equipe",
+                "responses": {
+                    "200": {
+                        "description": "Instances response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Instance"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          },
-          "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
         }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "description": "The name of the plant",
-            "type": "string"
-          },
-          "tag": {
-            "description": "Tag to specify the type",
-            "type": "string"
-          }
-        }
-      },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
-      },
-      "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
-          }
-        }
-      }
     },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
-      }
+    "components": {
+        "schemas": {
+            "Instance": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "ID da instância",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Nome da Instancia",
+                        "type": "string"
+                    },
+                    "token": "bb8e6c42-dc91-4b1c-9018-615a7e805fc8",
+                    "webhooks": {
+                        "description": "Webhooks de respostas da api",
+                        "type": "array"
+                    },
+                    "status": {
+                        "description": "Status da sessão do WhatsApp",
+                        "type": "string"
+                    },
+                    "sessionData": {},
+                    "createdAt": {
+                        "description": "Data de criação da instância",
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "description": "Data de alteração de dados",
+                        "type": "string"
+                    },
+                }
+            },
+            "NewPlant": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/Plant"
+                    },
+                    {
+                        "required": [
+                            "id"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "description": "Identification number of the plant",
+                                "type": "integer",
+                                "format": "int64"
+                            }
+                        }
+                    }
+                ]
+            },
+            "Error": {
+                "required": [
+                    "error",
+                    "message"
+                ],
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
     }
-  }
 }
