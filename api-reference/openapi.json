@@ -75,7 +75,6 @@
                         "description": "Status da sessão do WhatsApp",
                         "type": "string"
                     },
-                    "sessionData": {},
                     "createdAt": {
                         "description": "Data de criação da instância",
                         "type": "string"
