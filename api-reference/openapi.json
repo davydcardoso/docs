@@ -66,7 +66,10 @@
                         "description": "Nome da Instancia",
                         "type": "string"
                     },
-                    "token": "bb8e6c42-dc91-4b1c-9018-615a7e805fc8",
+                    "token": {
+                        "description": "Token de acesso da instância",
+                        "type": "string"
+                    },
                     "webhooks": {
                         "description": "Webhooks de respostas da api",
                         "type": "array"
