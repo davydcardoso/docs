@@ -13,10 +13,17 @@ Para começar a usar a API RocketSend, é crucial entender como autenticar e faz
 
 Todas as solicitações à API devem ser autenticadas usando o seguinte cabeçalho HTTP:
 
-```bash 
-    Authorization: Bearer <YOUR_API_TEAM_TOKEN>
-```
+```Authorization: Bearer <YOUR_API_TEAM_TOKEN>```
 
 ## Fazendo chamadas de API
 
 Para fazer uma chamada à API, você precisará usar o método HTTP apropriado para o endpoint desejado. Nossa API suporta os métodos ```GET```, ```POST```, ```PUT``` e ```DELETE```, dependendo da operação que você deseja realizar.
+
+## Exemplo de uma chamada GET
+
+Para recuperar informações sobre uma instância específica, você faria uma chamada ```GET```. Por exemplo, para obter os detalhes de uma instância, você pode usar:
+
+```bash 
+    GET https://rocketsend.click/instances/
+    Authorization: Bearer <YOUR_API_TEAM_TOKEN>
+```
