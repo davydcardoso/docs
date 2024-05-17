@@ -48,6 +48,11 @@
                     }
                 }
             }
+        },
+        "/messages": {
+            "post": {
+                "description": "Efetua o envio de mensagens"
+            }
         }
     },
     "components": {
