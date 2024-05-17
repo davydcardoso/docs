@@ -72,7 +72,7 @@
                     },
                     "webhooks": {
                         "description": "Webhooks de respostas da api",
-                        "type": "array"
+                        "type": "object"
                     },
                     "status": {
                         "description": "Status da sessão do WhatsApp",
