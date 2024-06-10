@@ -30,7 +30,40 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Instance"
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "description": "ID da instância",
+                        "type": "string"
+                      },
+                      "name": {
+                        "description": "Nome da Instancia",
+                        "type": "string"
+                      },
+                      "token": {
+                        "description": "Token de acesso da instância",
+                        "type": "string"
+                      },
+                      "webhooks": {
+                        "description": "Webhooks de respostas da api",
+                        "type": "string"
+                      },
+                      "status": {
+                        "description": "Status da sessão do WhatsApp",
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "description": "Data de criação da instância",
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "description": "Data de alteração de dados",
+                        "type": "string"
+                      }
+                    }
                   }
                 }
               }
