@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://api.rocketsend.click"
+      "url": "http://api.rocketsend.click/v1"
     }
   ],
   "security": [
@@ -30,7 +30,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Instance"
+                    "$ref": "#/components/schemas/NewPlant"
                   }
                 }
               }
