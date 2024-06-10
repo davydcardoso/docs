@@ -30,7 +30,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/NewPlant"
+                    "$ref": "#/components/schemas/Instance"
                   }
                 }
               }
